@@ -1,0 +1,32 @@
+class carro():
+  placa = raw_input('Ingrese su placa: ')
+  while len(placa) != 6:
+         placa = raw_input('Ingrese correctamente su placa: ')
+
+class fecha():
+    fecha= raw_input("Ingrese la fecha aa/mm/dd:")
+    a = int(fecha[0:4])
+    m = int(fecha[5:7])
+    di = int(fecha[8:10])
+
+
+class horac():
+    hora= raw_input("Ingrese la hora hh:mm:")
+
+p=carro()
+f=fecha()
+h=horac()
+import datetime
+d= datetime.date(f.a, f.m, f.di)
+if (d.isoweekday() == 1) and (p.placa[5] == "1")and (7 <= int(h.hora[0:2]) <= 9) and (0 <= int(h.hora[3:5]) <= 30) or (16 <= int(h.hora[0:2]) <= 19): # placa terminada en 1 , no puede circular lunes
+    print ("No puede circular")
+elif (d.isoweekday() == 2) and (p.placa[5] == "2") and (7 <= int(h.hora[0:2]) <= 9) and (0 <= int(h.hora[3:5]) <= 30) or (16 <= int(h.hora[0:2]) <= 19): # placa terminada en 2 , no puede circular martes
+    print ("No puede circular")
+elif (d.isoweekday() == 3) and (p.placa[5] == "3") and (7 <= int(h.hora[0:2]) <= 9) and (0 <= int(h.hora[3:5]) <= 30) or (16 <= int(h.hora[0:2]) <= 19): # placa terminada en 3, no puede circular miercoles
+    print ("No puede circular")
+elif (d.isoweekday() == 4) and (p.placa[5] == "4") and (7 <= int(h.hora[0:2]) <= 9) and (0 <= int(h.hora[3:5]) <= 30) or (16 <= int(h.hora[0:2]) <= 19): # placa terminada en 4, no puede circular jueves
+    print ("No puede circular")
+elif (d.isoweekday() == 5) and (p.placa[5] == "5") and (7 <= int(h.hora[0:2]) <= 9) and (0 <= int(h.hora[3:5]) <= 30) or (16 <= int(h.hora[0:2]) <= 19): # placa terminada en 5, no puede circular viernes
+    print ("No puede circular")
+else:
+    print("Si puede circular el vehiculo")
